@@ -1,0 +1,39 @@
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i>
+    Create New</a>
+  Product List</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>City</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list}}
+      <tr>
+        <td>{{this.fullName}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.mobile}}</td>
+        <td>{{this.city}}</td>
+        <td>
+          <a href="/employee/{{this._id}}"><button
+              type="button"
+              class="btn btn-primary"
+              aria-hidden="true"
+            >Edit</button></a>
+          <a
+            href="/employee/delete/{{this._id}}"
+            onclick="return confirm('Are you sure to delete this record ?');"
+          ><button
+              type="button"
+              class="btn btn-danger"
+              aria-hidden="true"
+            >Delete</button></a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
